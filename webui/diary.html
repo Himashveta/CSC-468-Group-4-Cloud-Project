@@ -7,6 +7,9 @@
 <style>
   body {
     font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
     transition: background-color 0.3s, color 0.3s;
   }
   .header {
@@ -46,6 +49,17 @@
   .new-entry:hover, .entry:hover {
     background-color: #e7e7e7;
   }
+  #new-entry-editor {
+    display: none; /* Hidden by default */
+    margin: 20px auto;
+    padding: 10px;
+    width: calc(100% - 40px); /* Full width minus padding */
+    height: 150px; /* Adjustable based on content */
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
   .customization-panel {
     text-align: center;
     padding: 10px;
@@ -64,6 +78,17 @@
   function applyFontColor() {
     var fontColor = document.getElementById('fontColorPicker').value;
     document.body.style.color = fontColor;
+  }
+
+  function toggleNewEntry() {
+    var editor = document.getElementById('new-entry-editor');
+    if (editor.style.display === 'none') {
+      editor.style.display = 'block';
+      document.getElementById('newEntryButton').textContent = 'Close';
+    } else {
+      editor.style.display = 'none';
+      document.getElementById('newEntryButton').textContent = '+\nNew Entry';
+    }
   }
 
   function signOut() {
@@ -86,7 +111,8 @@
 </div>
 
 <div class="entry-container">
-  <div id="newEntryButton" class="new-entry">+<br>New Entry</div>
+  <div id="newEntryButton" class="new-entry" onclick="toggleNewEntry()">+<br>New Entry</div>
+  <textarea id="new-entry-editor" placeholder="Start typing your entry..."></textarea>
   <!-- Placeholder for diary entries -->
   <div class="entry">Entry 1</div>
   <div class="entry">Entry 2</div>
@@ -96,3 +122,4 @@
 
 </body>
 </html>
+
