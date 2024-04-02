@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-service
+spec:
+  selector:
+    app: postgres
+  ports:
+    - protocol: TCP
+      port: 5432  # Port on which the service will listen
+      targetPort: 5432  # Port on which the pod is listening
+      nodePort: 30001  # Optional: Specify a specific port or let Kubernetes choose one for you
+  type: NodePort
