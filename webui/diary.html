@@ -6,14 +6,14 @@
 <title>My Diary</title>
 <style>
   body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Garamond', garamond;
+    background-color: #FFF5EE;
     margin: 0;
     padding: 0;
     transition: background-color 0.3s, color 0.3s;
   }
   .header {
-    background-color: #008cba;
+    background-color: #F8C8DC;
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -37,7 +37,7 @@
   .entry, .new-entry {
     width: 150px;
     height: 150px;
-    background-color: #ffffff;
+    background-color: #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,14 +47,14 @@
     transition: background-color 0.3s;
   }
   .new-entry:hover, .entry:hover {
-    background-color: #e7e7e7;
+    background-color: #FFFFF;
   }
   #new-entry-editor {
-    display: none; /* Hidden by default */
+    display: none; 
     margin: 20px auto;
     padding: 10px;
-    width: calc(100% - 40px); /* Full width minus padding */
-    height: 150px; /* Adjustable based on content */
+    width: calc(100% - 40px); 
+    height: 150px; 
     border-radius: 4px;
     border: 1px solid #ccc;
     background-color: #fff;
@@ -68,8 +68,10 @@
   .customization-panel label {
     margin-right: 10px;
   }
+
 </style>
 <script>
+
   function applyBackgroundColor() {
     var bgColor = document.getElementById('backgroundColorPicker').value;
     document.body.style.backgroundColor = bgColor;
@@ -113,13 +115,9 @@
 <div class="entry-container">
   <div id="newEntryButton" class="new-entry" onclick="toggleNewEntry()">+<br>New Entry</div>
   <textarea id="new-entry-editor" placeholder="Start typing your entry..."></textarea>
-  <!-- Placeholder for diary entries -->
   <div class="entry">Entry 1</div>
   <div class="entry">Entry 2</div>
   <div class="entry">Entry 3</div>
-  <div class="entry">Entry 4</div>
 </div>
-
 </body>
 </html>
-
