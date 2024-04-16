@@ -5,11 +5,52 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Diary.com - Login</title>
 <style>
-  body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; }
-  .login-container { margin: auto; width: 200px; }
-  .login-container button { width: 100%; padding: 10px; margin-top: 10px; }
-  .login-container input { width: 100%; padding: 10px; margin-top: 10px; }
-  h1 { color: #333; }
+body {
+  font-family: 'Garamond', garamond;
+  text-align: center;
+  padding-top: 50px;
+  background-color: #FFF5EE;
+  color: #333;
+  margin: 0;
+  height: 100vh;
+}
+
+.login-container {
+  margin: auto;
+  width: 300px;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.login-container input, .login-container button {
+  width: 100%;
+  padding: 12px 20px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; }
+
+button {
+  background-color: #F8C8DC;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #AA336A; 
+}
+
+button {
+  transition: transform 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
 </style>
 </head>
 <body>
