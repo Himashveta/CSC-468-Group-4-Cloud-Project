@@ -5,11 +5,11 @@ from django.http import  HttpResponse
 
 def index(request):
     usename = request.user
-    email = request.user
+    password = request.user
 
     context = {
             'username' : username
-            'email' : email
+            'password' : password
     }
     return render(request, 'index.html', context)
 
