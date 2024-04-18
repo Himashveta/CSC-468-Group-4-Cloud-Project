@@ -7,7 +7,5 @@ The goal of this project is to develop and deploy a cloud-based diary-writing we
 
 2. **Writing UI:** Opening entries transfer to a different editing UI for writing entries. Entries can be shared with other users via email so that they can also collaborate. Entries are not strictly limited to diary entries, as users can also use the interface to write poems, fiction, etc.
 
-3. **User-based Geo-location Sharing:** The website will allow users to use geolocation and profile matches to show other profiles that may have public entries of writing. In the future, users should be able to give comments on other users’ public entries and there can be a liking system for popular entries in the local area.
-
 4. **Privacy:** The website emphasizes the importance of user privacy for intimate entries. Locked or private entries cannot be accessed by anyone except the user. Public entries can be seen by others and if any concerning content should arise, users may report the entry-writer for content violation.
 
