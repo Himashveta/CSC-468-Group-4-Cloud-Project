@@ -1,6 +1,18 @@
 # dashboard/views.py
 from django.shortcuts import render, redirect
 from .forms import UserRegistrationForm
+from django.http import  HttpResponse
+
+def index(request):
+    usename = request.user
+    email = request.user
+
+    context = {
+            'username' : username
+            'email' : email
+    }
+    return render(request, 'index.html', context)
+
 
 def register(request):
     if request.method == 'POST':
