@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: django
-          image: Himashveta/django:latest  # Replace with your Docker image
+          image: as937801/django:latest  # Replace with your Docker image
           ports:
             - containerPort: 8000
           env:
