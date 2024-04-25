@@ -1,18 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: django-deployment
+  name: django-nginx-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: django
+      app: django-nginx
   template:
     metadata:
       labels:
-        app: django
+        app: django-nginx
     spec:
-      containers:
+     containers:
+      - name: django-nginx
+        image: your-django-nginx-image:v1  # Replace with your Docker image
+        ports:
+        - containerPort: 80
+    
         - name: django
           image: as937801/django:latest  # Replace with your Docker image
           ports:
