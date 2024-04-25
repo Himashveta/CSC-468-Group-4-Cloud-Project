@@ -27,6 +27,30 @@
     margin-left: 10px;
     outline: none;
   }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 120px;
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
   .entry-container {
     display: flex;
     flex-wrap: wrap;
@@ -101,7 +125,14 @@
 <body>
 <div class="header">
   <span>My Diary</span>
-  <button onclick="signOut()">Sign Out</button>
+  <div class="dropdown">
+    <button class="dropbtn">Menu</button>
+    <div class="dropdown-content">
+      <a href="#">Account Info</a>
+      <a href="#">Settings</a>
+      <a href="#" onclick="signOut()">Sign Out</a>
+    </div>
+  </div>
 </div>
 
 <div class="customization-panel">
