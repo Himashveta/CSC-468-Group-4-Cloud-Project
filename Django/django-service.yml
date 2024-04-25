@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: django-service
+  name: django-nginx-service
 spec:
   selector:
-    app: django
+    app: django-nginx
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 8000
+      targetPort: 80
   type: LoadBalancer  # Use LoadBalancer type if you want an external IP
