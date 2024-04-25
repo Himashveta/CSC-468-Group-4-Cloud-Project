@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Writing - My Diary</title>
+<style>
+  body {
+    font-family: 'Garamond', garamond;
+    background-color: #FFF5EE;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    padding-top: 50px;
+  }
+  .editor-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  textarea {
+    width: 100%;
+    height: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    font-family: 'Garamond', garamond;
+    font-size: 16px;
+  }
+  button {
+    background-color: #F8C8DC;
+    color: black;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  button:hover {
+    background-color: #AA336A; 
+  }
+</style>
+</head>
+<body>
+<h1>Writing Page</h1>
+<div class="editor-container">
+  <textarea id="entry-content" placeholder="Start typing your entry..."></textarea>
+  <button onclick="saveEntry()">Save Entry</button>
+</div>
+
+<script>
+  function saveEntry() {
+    // Get the content from the textarea
+    var entryContent = document.getElementById('entry-content').value;
+
+    // Save the content to local storage or send it to the server
+    // You can customize this part based on your requirements
+
+    // For example, you can save it to local storage like this:
+    localStorage.setItem('diaryEntry', entryContent);
+
+    // Redirect back to the diary page after saving
+    window.location.href = 'diary.html';
+  }
+</script>
+</body>
+</html>
