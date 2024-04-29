@@ -1,0 +1,23 @@
+# Use the official Python image
+FROM python:3.9
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY . /app
+
+# Install Flask and pymssql
+RUN pip3 install --no-cache-dir Flask pymssql
+
+# Expose the Flask port
+EXPOSE 5000
+
+# Set environment variables for SQL Server connection
+ENV SQL_SERVER=diarydb-sqlserver
+ENV SQL_USER=root
+ENV SQL_PASSWORD=password
+ENV SQL_DATABASE=DiaryDB
+
+# Run Flask when the container launches
+CMD ["python3", "app.py"]
