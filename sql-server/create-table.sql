@@ -1,0 +1,9 @@
+CREATE DATABASE diaryDB;
+USE diaryDB;
+
+CREATE TABLE diary (
+  id INT PRIMARY KEY IDENTITY,
+  title VARCHAR(255),
+  content TEXT,
+  created_at DATETIME DEFAULT GETDATE()
+);
