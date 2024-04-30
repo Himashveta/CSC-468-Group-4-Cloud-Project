@@ -1,28 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: django-nginx-deployment
+  name: diary-app-deployment
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: django-nginx
+      app: diary
   template:
     metadata:
       labels:
-        app: django-nginx
+        app: diary
     spec:
-     containers:
-      - name: django-nginx
-        image: your-django-nginx-image:v1  # Replace with your Docker image
+      containers:
+      - name: diary
+        image: cb946801/diary-app:latest  
         ports:
-        - containerPort: 80
-    
-        - name: django
-          image: as937801/django:latest  # Replace with your Docker image
-          ports:
-            - containerPort: 8000
-          env:
-            - name: DJANGO_SETTINGS_MODULE
-              value: "django.settings"
-            # Add other environment variables for database, etc.
+        - containerPort: 8000
