@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-diary-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-diary-app
+  template:
+    metadata:
+      labels:
+        app: my-diary-app
+    spec:
+      containers:
+      - name: my-diary-app
+        image: yourdockerhubusername/my-diary-app:latest
+        ports:
+        - containerPort: 3000
