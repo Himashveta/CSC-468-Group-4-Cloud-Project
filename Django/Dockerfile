@@ -1,31 +1,32 @@
-# Use an official Python runtime as the base image
-FROM python:3.9-slim
+# Use an official Python runtime as a parent image
+FROM python:3.8-slim
 
 # Set environment variables
-ENV PYTHONUNBUFFERED=1 \
-    DJANGO_SETTINGS_MODULE=myproject.settings
-
-# Set work directory
-WORKDIR /app
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
 # Install system dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install -y \
     gcc \
-    libpq-dev \
-    nginx \
- && rm -rf /var/lib/apt/lists/*
+    libmariadb-dev-compat \
+    libmariadb-dev \
+    pkg-config \
+    && rm -rf /var/lib/apt/lists/*
 
-# Install Django and other dependencies
-RUN pip install --no-cache-dir django psycopg2-binary
+# Set work directory
+WORKDIR /code
 
-# Copy project files
-COPY . /app/
 
-# Remove default NGINX configuration
-RUN rm /etc/nginx/nginx.conf /etc/nginx/conf.d/default.conf
+# Install dependencies
+COPY requirements.txt /code/
+RUN pip install -r requirements.txt
 
-# Expose port
-EXPOSE 80
+# Copy project
+COPY . /code/
 
-# Run initialization script
-CMD ["sh", "init.sh"]
+# List contents of /code directory
+RUN ls -la /code/
+
+# Expose port 8000 and start the Django server
+EXPOSE 8000
+CMD ["python", "/code/manage.py", "runserver", "0.0.0.0:8000"]
