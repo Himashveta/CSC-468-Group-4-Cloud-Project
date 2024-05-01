@@ -28,6 +28,13 @@
     font-family: 'Garamond', garamond;
     font-size: 16px;
   }
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;  /* Adjust spacing */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
   button {
     background-color: #F8C8DC;
     color: black;
@@ -38,31 +45,18 @@
     font-size: 16px;
   }
   button:hover {
-    background-color: #AA336A; 
+    background-color: #AA336A;
   }
 </style>
 </head>
 <body>
 <h1>Writing Page</h1>
 <div class="editor-container">
-  <textarea id="entry-content" placeholder="Start typing your entry..."></textarea>
-  <button onclick="saveEntry()">Save Entry</button>
+  <form action="/save-entry" method="post">
+    <input type="text" name="entryTitle" placeholder="Entry Title" required>
+    <textarea name="entryContent" id="entry-content" placeholder="Start typing your entry..." required></textarea>
+    <button type="submit">Save Entry</button>
+  </form>
 </div>
-
-<script>
-  function saveEntry() {
-    // Get the content from the textarea
-    var entryContent = document.getElementById('entry-content').value;
-
-    // Save the content to local storage or send it to the server
-    // You can customize this part based on your requirements
-
-    // For example, you can save it to local storage like this:
-    localStorage.setItem('diaryEntry', entryContent);
-
-    // Redirect back to the diary page after saving
-    window.location.href = 'diary.html';
-  }
-</script>
 </body>
 </html>
