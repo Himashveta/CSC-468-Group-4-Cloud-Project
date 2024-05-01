@@ -1,68 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Settings - My Diary</title>
-<style>
-  body {
-    font-family: 'Garamond', garamond;
-    background-color: #FFF5EE;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    padding-top: 50px;
-  }
-  .editor-container {
-    width: 80%;
-    margin: 0 auto;
-  }
-  textarea {
-    width: 100%;
-    height: 300px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-bottom: 20px;
-    font-family: 'Garamond', garamond;
-    font-size: 16px;
-  }
-  input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;  /* Adjust spacing */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  button {
-    background-color: #F8C8DC;
-    color: black;
-    border: none;
-    cursor: pointer;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-  button:hover {
-    background-color: #AA336A;
-    
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - My Diary</title>
+    <style>
+        body {
+            font-family: 'Garamond', garamond;
+            background-color: #FFF5EE;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .editor-container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        textarea {
+            width: 100%;
+            height: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            font-family: 'Garamond', garamond;
+            font-size: 16px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            /* Adjust spacing */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #F8C8DC;
+            color: black;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #AA336A;
+    </style>
 </head>
+
 <body>
-<h1>Settings</h1>
-<div class="editor-container">
-  </form>
-<section class="update-user">
+    <h1>Settings</h1>
+    <div class="editor-container">
+        </form>
+        <section class="update-user">
             <h2>Update Username</h2>
             <form action="/settings/username" method="POST">
                 <label for="new-username">New Username</label>
                 <input type="username" id="new-username" name="new-username">
                 <button type="submit" style="margin-top: 10px;">Update Username</button>
+                <p>&nbsp;</p>
+
             </form>
         </section>
-         <section class="change-password">
+        <section class="change-password">
             <h2>Change Password</h2>
             <form action="/settings/password" method="POST">
                 <div class="form-group">
@@ -78,6 +86,8 @@
                     <input type="password" id="confirm-password" name="confirm-password">
                 </div>
                 <button type="submit" style="margin-top: 10px;">Change Password</button>
+                <p>&nbsp;</p>
+
             </form>
         </section>
         <section class="update-user">
@@ -87,9 +97,12 @@
                 <input type="Email" id="new-Email" name="new-Email">
                 <button type="submit" style="margin-top: 10px;">Update Email</button>
             </form>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
         </section>
-    </main>
-    <footer>
-</div>
+        </main>
+        <footer>
+    </div>
 </body>
+
 </html>
