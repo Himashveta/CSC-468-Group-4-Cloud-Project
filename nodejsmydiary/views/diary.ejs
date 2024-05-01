@@ -88,8 +88,10 @@
   <div class="dropdown">
     <button class="dropbtn">Menu</button>
     <div class="dropdown-content">
-      <a href="#">Account Info</a>
-      <a href="#">Settings</a>
+      <form action="/account-info" method="POST">
+        <button type="submit">Account Info</button>
+      <form action="/settings" method="POST">
+        <button type="submit">Settings</button>
       <!-- Updated logout form directly in the dropdown for better usability -->
       <form action="/logout" method="POST">
         <button type="submit">Sign Out</button>
