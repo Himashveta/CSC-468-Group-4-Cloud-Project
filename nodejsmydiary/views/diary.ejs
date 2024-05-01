@@ -20,12 +20,16 @@
     justify-content: space-between;
     align-items: center;
   }
-  .header button {
+  .header button, .header form button {
     padding: 5px 15px;
     border: none;
     cursor: pointer;
     margin-left: 10px;
     outline: none;
+    background: none;
+    color: white;
+    font-family: 'Garamond', garamond;
+    font-size: 1em;
   }
   .dropdown {
     position: relative;
@@ -39,13 +43,16 @@
     z-index: 1;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
-  .dropdown-content a {
-    color: black;
+  .dropdown-content a, .dropdown-content form button {
+    color: black; /* Ensure this applies to buttons and links within forms in the dropdown */
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    background: none;
+    border: none;
+    text-align: left;
   }
-  .dropdown-content a:hover {
+  .dropdown-content a:hover, .dropdown-content form button:hover {
     background-color: #f1f1f1;
   }
   .dropdown:hover .dropdown-content {
@@ -83,13 +90,16 @@
     <div class="dropdown-content">
       <a href="#">Account Info</a>
       <a href="#">Settings</a>
-      <a href="index.html">Sign Out</a>
+      <!-- Updated logout form directly in the dropdown for better usability -->
+      <form action="/logout" method="POST">
+        <button type="submit">Sign Out</button>
+      </form>
     </div>
   </div>
 </div>
 
 <div class="entry-container">
-  <a href="writing.html" class="new-entry">New Entry +</a>
+  <a href="/writing" class="new-entry">New Entry +</a>
   <div class="entry">Entry 1</div>
   <div class="entry">Entry 2</div>
   <div class="entry">Entry 3</div>
