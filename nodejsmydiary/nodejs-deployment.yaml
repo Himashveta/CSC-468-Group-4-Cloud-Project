@@ -6,14 +6,21 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-diary-app
+      app: mydiary-app
   template:
     metadata:
       labels:
-        app: my-diary-app
+        app: mydiary-app
     spec:
       containers:
-      - name: my-diary-app
-        image: yourdockerhubusername/my-diary-app:latest
+      - name: mydiary-app
+        image: cb946801/mydiary-app:latest
         ports:
+        - containerPort: 3000
+        env:
+          - name: SESSION_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: session-secret
+                key: SESSION_SECRET
         - containerPort: 3000
