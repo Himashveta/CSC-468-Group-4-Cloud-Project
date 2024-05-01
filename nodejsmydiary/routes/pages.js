@@ -1,31 +1,54 @@
 const express = require('express');
 const router = express.Router();
 
-// Route to handle the landing page
+// Route for the main page
 router.get('/', (req, res) => {
-  res.render('index');
+    res.render('index');
 });
 
-// Route to handle diary page
+// Route for handling POST to /login
+router.post('/login', (req, res) => {
+    const { username, password } = req.body;
+    // Hardcoded credentials for demonstration
+    if (username === 'testuser' && password === 'password123') {
+        res.redirect('/diary'); // Redirect to the diary page after successful login
+    } else {
+        res.render('index', { error: "Invalid username or password" }); // Show error on login page
+    }
+});
+
 router.get('/diary', (req, res) => {
-  // Here you can also fetch existing diary entries from the database
-  res.render('diary');
+    res.render('diary');
 });
 
-// Route to handle writing new entry
 router.get('/writing', (req, res) => {
-  res.render('writing');
+    res.render('writing');
 });
 
-// Route to save a new entry (POST request)
+// Handle saving an entry temporarily
 router.post('/save-entry', (req, res) => {
-  // Extract entry from req.body
-  const { entryContent } = req.body;
+    const { entryTitle, entryContent } = req.body;
+    console.log('Entry Title:', entryTitle);  // Log the title to the console
+    console.log('Entry Content:', entryContent);  // Log the content to the console
 
-  // Code to save entry to database
+    // Optionally store in the session for the duration of the session
+    if (!req.session.entries) {
+        req.session.entries = [];  // Initialize an array if it doesn't exist
+    }
+    req.session.entries.push({ title: entryTitle, content: entryContent });
 
-  // Redirect to diary page after saving
-  res.redirect('/diary');
+    res.redirect('/diary');  // Redirect to the diary page or you can redirect back to the writing page
 });
+// Handle logout
+router.post('/logout', (req, res) => {
+    // Destroy the session and log out the user
+    req.session.destroy((err) => {
+        if (err) {
+            return res.status(500).send("Failed to logout.");
+        }
+        res.redirect('/'); // Redirect to the home page or login page
+    });
+});
+
 
 module.exports = router;
