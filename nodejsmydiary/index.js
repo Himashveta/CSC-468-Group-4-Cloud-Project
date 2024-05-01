@@ -1,23 +1,29 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const session = require('express-session');
+const path = require('path');
 const app = express();
 const port = 3000;
 
-// Set up EJS for templating
+// Set up the view engine
 app.set('view engine', 'ejs');
 
-// Middleware to parse request bodies
-app.use(bodyParser.urlencoded({ extended: true }));
+// Middleware for serving static files
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Serve static files from 'public' directory
-app.use(express.static('public'));
+// Middleware for parsing request bodies
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-// Optional: Set up session management
+// Session management with a mandatory environment variable for the secret
+const sessionSecret = process.env.SESSION_SECRET;
+if (!sessionSecret) {
+  throw new Error("SESSION_SECRET is not set. Please set the environment variable.");
+}
 app.use(session({
-  secret: 'your_secret_key',  // Choose a secret string
-  resave: false,
-  saveUninitialized: true
+    secret: sessionSecret,
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false } // Only set to true if you are serving your pages over HTTPS
 }));
 
 // Import and use routes from pages.js
@@ -25,6 +31,6 @@ const pageRoutes = require('./routes/pages');
 app.use('/', pageRoutes);
 
 // Start the server
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+app.listen(port, '0.0.0.0', () => {
+    console.log(`Server running on port ${port}`);
 });
