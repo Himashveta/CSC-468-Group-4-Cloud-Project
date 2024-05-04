@@ -1,6 +1,6 @@
-# Diary.com Project
+# Diary.com 
 
-Welcome to the Diary.com project repository! This repository contains the source code and documentation for our project, which aims to create a user-friendly web application for writing and managing personal diary entries securely.
+Welcome to the Diary.com cloud computing project repository! This repository contains the source code and documentation for our project, which aims to create a user-friendly web application for writing and managing personal diary entries securely.
 
 ## Overview
 
@@ -32,6 +32,6 @@ To set up and run the Diary.com application locally, follow these steps:
 
 ## Contributions
 
-We welcome contributions to Diary.com project! Whether it's bug fixes, feature enhancements, or documentation improvements, feel free to submit a pull request. 
+We welcome contributions to the Diary.com project! Whether it's bug fixes, feature enhancements, or documentation improvements, feel free to submit a pull request. 
 
 Thank you for your interest in Diary.com! We hope you find the project useful and valuable.
