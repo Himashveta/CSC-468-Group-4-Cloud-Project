@@ -12,11 +12,11 @@ The project is organized into several key components:
 
 1. **WebUI and Frontend Development**: The frontend of the application is developed using HTML, CSS, and JavaScript (Node.js). This includes login/signup pages, diary entry creation, and viewing functionalities.
 
-2. **User Authentication**: User authentication is implemented using Django, providing a robust authentication system integrated with PostgreSQL database.
+2. **User Authentication**: User authentication is implemented using Node.js, providing a robust authentication system integrated with the MySQL database.
 
-3. **Database Management**: The PostgreSQL database stores user information, diary entries, and associated metadata. Encryption is employed to ensure the security of sensitive user data.
+3. **Database Management**: The MySQL database stores user information, diary entries, and associated metadata. Encryption is employed to ensure the security of sensitive user data.
 
-4. **Backend Workers**: Flask backend workers facilitate communication between the frontend WebUI and the PostgreSQL database, handling requests and managing interactions.
+4. **Backend Workers**: Flask backend workers facilitate communication between the frontend WebUI and the MySQL database, handling requests and managing interactions.
 
 5. **Kubernetes Deployment**: The project is deployed on Kubernetes for scalability, fault tolerance, and efficient resource utilization. YAML files define deployments and services for seamless application deployment.
 
@@ -25,8 +25,8 @@ The project is organized into several key components:
 To set up and run the Diary.com application locally, follow these steps:
 
 1. Clone this repository to your local machine.
-2. Install necessary dependencies for frontend (Node.js), backend (Flask), and database (PostgreSQL).
-3. Configure database settings in the Django settings file and set up necessary migrations.
+2. Install necessary dependencies for frontend (Node.js), backend (Flask), and database (MySQL).
+3. Configure database settings in the Node.js settings file and set up necessary migrations.
 4. Run the frontend and backend servers.
 5. Access the application through the provided URL.
 
