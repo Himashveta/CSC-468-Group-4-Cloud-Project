@@ -9,4 +9,4 @@ spec:
   ports:
   - port: 3000
     targetPort: 3000
-    nodePort: 30000 # Specify the node port here, ensure it's within your cluster's allowed range
+    nodePort: 30000
